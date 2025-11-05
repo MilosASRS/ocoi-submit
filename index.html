@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Soumettre un acteur OCOI</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body { font-family: sans-serif; max-width: 700px; margin: 20px auto; }
+    label { display:block; margin-top:10px; font-weight:bold; }
+    input, textarea, select { width:100%; padding:6px; }
+    button { margin-top:15px; padding:8px 16px; background:#003366; color:#fff; border:none; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <h1>Soumettre un acteur</h1>
+  <p>Merci de renseigner les informations de l'organisation.</p>
+
+  <form>
+    <label>Nom de l’acteur</label>
+    <input type="text" name="nom" required>
+
+    <label>Site web</label>
+    <input type="url" name="site">
+
+    <label>Adresse / Région</label>
+    <input type="text" name="adresse">
+
+    <label>Email</label>
+    <input type="email" name="mail">
+
+    <label>Téléphone</label>
+    <input type="text" name="tel">
+
+    <label>Texte 1 (description courte)</label>
+    <textarea name="texte1" rows="2"></textarea>
+
+    <label>Texte 2 (description détaillée)</label>
+    <textarea name="texte2" rows="4"></textarea>
+
+    <button type="submit">Envoyer</button>
+  </form>
+</body>
+</html>
