@@ -1,0 +1,13 @@
+{
+  "acteurs": [
+    {
+      "nom": "Exemple Société",
+      "site": "https://exemple.com",
+      "adresse": "La Réunion",
+      "mail": "contact@exemple.com",
+      "tel": "+262 262 00 00 00",
+      "texte1": "Prestataire IT spécialisé en sécurité et réseau.",
+      "texte2": "Entreprise réunionnaise fournissant des services informatiques aux entreprises locales et régionales, avec une expertise en infrastructure, cybersécurité et cloud."
+    }
+  ]
+}
