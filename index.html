@@ -84,20 +84,22 @@
       updatedData.acteurs.push(newActor);
 
       // on crée un blob pour télécharger le nouveau JSON
-      const dataStr = JSON.stringify(updatedData, null, 2);
-      const blob = new Blob([dataStr], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
-
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'data.json';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-
-      msg.style.display = 'block';
-      form.reset();
-    });
-  </script>
-</body>
-</html>
+       fetch("http://192.168.1.38:5000/submit", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(newActor)
+})
+.then(r => r.json())
+.then(res => {
+  if (res.status === "ok") {
+    msg.innerHTML = "Acteur ajouté avec succès sur le backend OCOI.";
+  } else {
+    msg.innerHTML = "Erreur : " + res.msg;
+  }
+  msg.style.display = "block";
+  form.reset();
+})
+.catch(() => {
+  msg.innerHTML = "Erreur de connexion au backend.";
+  msg.style.display = "block";
+});
